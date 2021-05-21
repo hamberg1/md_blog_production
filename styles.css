@@ -1,0 +1,53 @@
+	/* div.navbar-header{ */
+		/* font-family: 'IBM Plex Sans', sans-serif; */
+	/* } */
+	div.w-100 {
+	    width: 98%!important;
+		margin-left: 1%;
+		margin-top: 10px;
+		background: #252627;
+		color: #a9a9b3;
+		}
+
+	div.large {
+	font-size: 300%;
+		}
+		
+	div.markdown-body {
+				color: darkgrey;
+				padding-top: 15px;
+				margin-left: 7%;
+				margin-right: 7%;
+		}
+		
+	.markdown-body h1,
+	.markdown-body h2 {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-family: 'Inter', sans-serif;
+		padding-bottom: .3em;
+		border-bottom: none;
+	}
+	.markdown-body a {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-family: 'Inter', sans-serif;
+		color: #536fc3;
+		text-decoration: none;
+	}
+	
+	:not(pre) > code[class*="language-"],
+	pre[class*="language-"] {
+		background: #121315;
+	}
+	.style .token.string {
+		color: none;
+		background: none;
+	}
+	pre.language-js, pre.language-bash{
+		border: solid;
+		border-width: 1.5px;
+		border-radius: 5px;
+		padding-left: 12px;
+		border-color: #212020;
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
