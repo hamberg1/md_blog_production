@@ -1,6 +1,6 @@
 /* var str = "002_10-05-2021_How_google_made_huge_bucks"
 console.log(`serial:${str.substr(0,3)} date:${str.substr(4,10)} title:${str.substr(15)}`) */
-var url = "https://api.github.com/repos/hamberg1/md_blog/contents/contents"
+var url = "https://api.github.com/repos/hamberg1/md_blog_production/contents/contents"
 
 fetch(url)
 .then(re=>re.json())
