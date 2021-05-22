@@ -56,7 +56,7 @@ exports.handler = async event => {
  	 }
   	
  	 try {
-   	 await navigator.clipboard.writeText("https://minimal-post.netlify.app/.netlify/functions/post?name="+ subject)
+   	 await navigator.clipboard.writeText(subject)
 	alert("Link copied")
  	 } catch (err) {
     	console.error('Failed to copy!', err)
