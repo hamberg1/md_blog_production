@@ -54,7 +54,7 @@ exports.handler = async event => {
     	// Clipboard API not available
   	  return
  	 }
-  	const text = window.post_name
+  	const text = window.location.href
  	 try {
    	 await navigator.clipboard.writeText("https://minimal-post.netlify.app/.netlify/functions/post?name="+ text)
 	alert("Link copied")
