@@ -25,7 +25,7 @@ exports.handler = async event => {
 	The New Blog 
     </div>
     <ul class="nav navbar-nav">
-		<button id="share" type="button" class="btn btn-secondary" >
+		<button id="share" type="button" class="btn btn-secondary" style="visibility: visible;" >
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
     <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
     </svg>
@@ -43,16 +43,25 @@ exports.handler = async event => {
 
 
 	<script>
-
-	</script>
-
-	<script>
 	if(window.innerWidth >= 800){
 				document.getElementById("nav_head").style = "font-weight: bold;font-size: 27px;color: #a9a9b3;margin-left: 5%;"
 			}
 	document.getElementById("nav_head").onclick = () =>{
 		window.location = window.origin;
 	}
+	document.getElementById('share').addEventListener('click', async event => {
+ 	 if (!navigator.clipboard) {
+    	// Clipboard API not available
+  	  return
+ 	 }
+  	const text = window.post_name
+ 	 try {
+   	 await navigator.clipboard.writeText(`${window.origin}/.netlify/functions/post?name=${text}`)
+	alert("Link copied")
+ 	 } catch (err) {
+    	console.error('Failed to copy!', err)
+  	}
+	})
 	</script>
 	</body>
 
