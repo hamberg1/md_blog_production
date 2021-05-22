@@ -19,6 +19,8 @@ fetch(url)
 			if(window.innerWidth >= 800){
 				document.getElementById("nav_head").style = "font-weight: bold;font-size: 27px;color: #a9a9b3;margin-left: 5%;"
 			}
+			document.getElementById("share").style.visibility = "visible";
+			window.post_name = str
 		}
 		var div1= document.createElement("DIV")
 		div1.className = "card w-100" 
@@ -30,4 +32,20 @@ fetch(url)
 
 document.getElementById("nav_head").onclick = () =>{
 	location.reload()
+	document.getElementById("share").style.visibility = "hidden";
 }
+
+
+document.getElementById('share').addEventListener('click', async event => {
+  if (!navigator.clipboard) {
+    // Clipboard API not available
+    return
+  }
+  const text = window.post_name
+  try {
+    await navigator.clipboard.writeText(`${window.origin}/.netlify/share/post?name=${text}`)
+	alert("Link copied")
+  } catch (err) {
+    console.error('Failed to copy!', err)
+  }
+})
