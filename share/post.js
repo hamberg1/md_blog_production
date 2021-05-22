@@ -56,7 +56,7 @@ exports.handler = async event => {
  	 }
   	
  	 try {
-   	 await navigator.clipboard.writeText(subject)
+   	 await navigator.clipboard.writeText(window.location.toString())
 	alert("Link copied")
  	 } catch (err) {
     	console.error('Failed to copy!', err)
